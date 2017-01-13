@@ -1,0 +1,24 @@
+{
+  "name": "agartha-cli-commands",
+  "description": "Agartha CLI commands",
+  "version": "1.0.0",
+  "author": "Alberto Ortiz Flores <aortiz@nyu.edu>",
+  "contributors": [
+    "Alberto Ortiz Flores <aortiz@nyu.edu>"
+  ],
+  "keywords": [ "agartha" ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dismorfo/agartha-cli-commands"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "main": "index.js",
+  "preferGlobal": false,
+  "engines": {
+    "node": ">= 7.4"
+  },
+  "os": [
+    "!win32"
+  ]
+}
