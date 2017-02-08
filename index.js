@@ -3,8 +3,11 @@
 const Commands = class {
 
   constructor () {
+
     this.version = '1.0.0';
+
     this.name = 'agartha-cli-commands';
+
   }
 
   /**
@@ -33,13 +36,13 @@ const Commands = class {
    * Main program.
    */
   create () {
-  
+
     console.log('Create app')
-    
+
     console.log(this.relic)
-    
+
     console.log(this.force)
-    
+
     return;
 
     // what type of relic will be forge
@@ -78,58 +81,55 @@ const Commands = class {
    * Forge program.
    */
   forge () {
-    if (exit.exited) return;
-    var project = agartha.exists(agartha.path.join(agartha.appDir(), 'project.json'));
-    if (project) agartha.forge();
+
+    var project = process.agartha.exists(process.agartha.path.join(process.agartha.appDir(), 'project.json'));
+
+    if (project) process.agartha.forge();
+
     else {
-      agartha.log('Can not forge, make sure you have project.json in your project.', 'error');
+      process.agartha.log('Can not forge, make sure you have project.json in your project.', 'error');
       exit(1);
     }
-  }
-  
-/**
-program
-    .command('forge')
-    .description('Forge a project')
-    .action(forge);
-*/
 
-/**    
-program
-    .command('upgrade')
-    .description('Upgrade application')
-    .action(upgrade);
-*/  
-  
+  }
+
+  listOptions() {
+    return [
+      {
+        'flag' : '-r, --relic [relic]',
+        'description' : 'Which relic to use'
+      },
+      {
+        'flag' : '-a, --artifact [relic]',
+        'description' : 'Which artifact to use as based'
+      },
+      {
+        'flag' : '-f, --force',
+        'description' : 'force on non-empty directory'
+      }
+    ]
+  }
+
   listCommands () {
    return [
      {
        'command' : 'upgrade',
        'description' : 'Upgrade application',
-       'action' : this.upgrade,
-       'options' : []
+       'action' : this.upgrade
      },
      {
        'command' : 'create',
        'description' : 'Craft a site scaffold',
-       'action' : this.create,
-       'options' : [
-         { 
-           'flag' : '-r, --relic [relic]', 
-           'description' : 'Which relic to use'
-         },
-         { 
-           'flag' : '-a, --artifact [relic]', 
-           'description' : 'Which artifact to use as based'
-         },
-         { 
-           'flag' : '-f, --force',
-           'description' : 'force on non-empty directory'
-         }
-       ]
+       'action' : this.create
+     },
+     {
+       'command' : 'forge',
+       'description' : 'Forge a project',
+       'action' : this.forge
      }
+
    ];
-  }  
+  }
 
 }
 
