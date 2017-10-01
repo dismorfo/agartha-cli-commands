@@ -1,13 +1,23 @@
 'use strict'
 
 const Scaffold = class {
+
   constructor (options) {
     this.version = '1.0.0'
     this.name = options.name
     this.relic = options.relic || 'generic'
     this.destinationPath = options.destinationPath || '.'
   }
+
+  /**
+   * Create Agartha scaffold
+   */
   create () {
+  
+    console.log('Not today')
+    
+    return;
+  
     const agartha = process.agartha
     const name = this.name
     const destinationPath = this.destinationPath
@@ -109,20 +119,9 @@ const Scaffold = class {
           complete()
         })
       }
-      // not now; we will get to this later on
-      // else {
-      //  confirm('Destination is not empty, continue? [y/N] ', (ok) => {
-      //    if (ok) {
-      //      process.stdin.destroy()
-      //      agartha.application(appName, destinationPath, relic)
-      //    }
-      //    else {
-      //      agartha.exit(new Error('Aborting'))
-      //    }
-      //  })
-      // }
     })
   }
+
   /**
    * Prompt for confirmation on STDOUT/STDIN
    */
@@ -138,6 +137,7 @@ const Scaffold = class {
       callback(/^y|yes|ok|true$/i.test(input))
     })
   }
+
   interactive () {
     console.log('Interactive mode')
     const agartha = process.agartha
@@ -145,18 +145,22 @@ const Scaffold = class {
       agartha.log(answer, 'ok')
     })
   }
+
 }
 
 const Commands = class {
+
   constructor () {
     this.version = '1.0.0'
     this.name = 'agartha-cli-commands'
   }
+  
   upgrade () {
     const AutoUpdate = require('./lib/autoupdater/index')
     const update = new AutoUpdate()
     update.on('finish', () => console.log('Finished updating'))
   }
+  
   create () {
     const agartha = process.agartha
     // what type of relic will be forge
@@ -185,6 +189,7 @@ const Commands = class {
     // generate the app scaffold
     scaffold.create()
   }
+
   /**
    * Forge program.
    */
@@ -198,6 +203,7 @@ const Commands = class {
       agartha.exit(new Error('Can not forge, make sure you have project.json in your project.'))
     }
   }
+
   listOptions () {
     return [
       {
@@ -219,6 +225,7 @@ const Commands = class {
       }
     ]
   }
+
   listCommands () {
     return [
       {
@@ -238,6 +245,7 @@ const Commands = class {
       }
     ]
   }
+
 }
 
 exports = module.exports = Commands
