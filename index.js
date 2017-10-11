@@ -43,11 +43,6 @@ const Commands = class {
         'flag': '-i, --interactive',
         'description': 'Run interactive mode'
       },
-
-      {
-        'flag': '-a, --artifact [relic]',
-        'description': 'Which artifact to use as based'
-      },
       {
         'flag': '-f, --force',
         'description': 'force on non-empty directory'
