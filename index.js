@@ -5,13 +5,10 @@ const Commands = class {
   constructor (program) {
     this.version = '1.0.1'
     this.name = 'agartha-cli-commands'
-    this.commands = []
-    this.options = []
     const agartha = process.agartha
     const defaultCommands = agartha.path.join(__dirname, 'lib/commands')
     const localCommands = agartha.path.join(agartha.appDir(), 'app', 'commands')
-    // need a better solution for options
-    this.listOptions().forEach((option) => {
+    this.defaultOptions.forEach((option) => {
       program.option(option.flag, option.description)
     })
     agartha._.each([defaultCommands, localCommands], (path) => {
@@ -21,11 +18,13 @@ const Commands = class {
           if (agartha.exists(exists)) {
             const SubCommand = require(exists)
             const subcommand = new SubCommand()
+            subcommand.options.forEach((option) => {
+              program.option(option.flag, option.description)
+            })
             program.command(subcommand.command)
                    .description(subcommand.description)
                    .alias(subcommand.alias)
                    .action(subcommand.action)
-            
           }
         })
       }
@@ -33,19 +32,11 @@ const Commands = class {
     program.parse(process.argv)
   }
 
-  listOptions () {
+  get defaultOptions () {
     return [
-      {
-        'flag': '-r, --relic [relic]',
-        'description': 'Which relic to use'
-      },
       {
         'flag': '-i, --interactive',
         'description': 'Run interactive mode'
-      },
-      {
-        'flag': '-f, --force',
-        'description': 'force on non-empty directory'
       }
     ]
   }
