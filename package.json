@@ -1,7 +1,7 @@
 {
   "name": "agartha-cli-commands",
   "description": "Agartha CLI commands",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "author": "Alberto Ortiz Flores <aortiz@nyu.edu>",
   "contributors": [
     "Alberto Ortiz Flores <aortiz@nyu.edu>"
