@@ -1,76 +1,24 @@
 {
-  "_args": [
-    [
-      {
-        "raw": "agartha-cli-commands@https://github.com/dismorfo/agartha-cli-commands/archive/1.0.2.tar.gz",
-        "scope": null,
-        "escapedName": "agartha-cli-commands",
-        "name": "agartha-cli-commands",
-        "rawSpec": "https://github.com/dismorfo/agartha-cli-commands/archive/1.0.2.tar.gz",
-        "spec": "https://github.com/dismorfo/agartha-cli-commands/archive/1.0.2.tar.gz",
-        "type": "remote"
-      },
-      "/Users/ortiz/tools/apps/agartha-cli"
-    ]
-  ],
-  "_from": "https://github.com/dismorfo/agartha-cli-commands/archive/1.0.2.tar.gz",
-  "_id": "agartha-cli-commands@1.0.2",
-  "_inCache": true,
-  "_location": "/agartha-cli-commands",
-  "_phantomChildren": {},
-  "_requested": {
-    "raw": "agartha-cli-commands@https://github.com/dismorfo/agartha-cli-commands/archive/1.0.2.tar.gz",
-    "scope": null,
-    "escapedName": "agartha-cli-commands",
-    "name": "agartha-cli-commands",
-    "rawSpec": "https://github.com/dismorfo/agartha-cli-commands/archive/1.0.2.tar.gz",
-    "spec": "https://github.com/dismorfo/agartha-cli-commands/archive/1.0.2.tar.gz",
-    "type": "remote"
-  },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://github.com/dismorfo/agartha-cli-commands/archive/1.0.2.tar.gz",
-  "_shasum": "2f05385dd92d0f0f6e30d492980a6a5d4282dc6f",
-  "_shrinkwrap": null,
-  "_spec": "agartha-cli-commands@https://github.com/dismorfo/agartha-cli-commands/archive/1.0.2.tar.gz",
-  "_where": "/Users/ortiz/tools/apps/agartha-cli",
-  "author": {
-    "name": "Alberto Ortiz Flores",
-    "email": "aortiz@nyu.edu"
-  },
-  "bugs": {
-    "url": "https://github.com/dismorfo/agartha-cli-commands/issues"
-  },
-  "contributors": [
-    {
-      "name": "Alberto Ortiz Flores",
-      "email": "aortiz@nyu.edu"
-    }
-  ],
-  "dependencies": {},
+  "name": "agartha-cli-commands",
   "description": "Agartha CLI commands",
-  "devDependencies": {},
+  "version": "1.0.1",
+  "author": "Alberto Ortiz Flores <aortiz@nyu.edu>",
+  "contributors": [
+    "Alberto Ortiz Flores <aortiz@nyu.edu>"
+  ],
+  "keywords": [ "agartha" ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dismorfo/agartha-cli-commands"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "main": "index.js",
+  "preferGlobal": false,
   "engines": {
     "node": ">= 7.4"
   },
-  "homepage": "https://github.com/dismorfo/agartha-cli-commands#readme",
-  "keywords": [
-    "agartha"
-  ],
-  "license": "MIT",
-  "main": "index.js",
-  "name": "agartha-cli-commands",
-  "optionalDependencies": {},
   "os": [
     "!win32"
-  ],
-  "preferGlobal": false,
-  "readme": "# agartha-cli-commands",
-  "readmeFilename": "README.md",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dismorfo/agartha-cli-commands.git"
-  },
-  "version": "1.0.2"
+  ]
 }
