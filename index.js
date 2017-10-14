@@ -1,8 +1,7 @@
 'use strict'
-
 const Commands = class {
   constructor (program) {
-    this.version = '1.0.1'
+    this.version = '1.0.6'
     this.name = 'agartha-cli-commands'
     try {
       const agartha = process.agartha
@@ -34,7 +33,6 @@ const Commands = class {
       console.error('outer', e.message)
     }
   }
-
   get defaultOptions () {
     return [
       {

@@ -1,12 +1,14 @@
 {
   "name": "agartha-cli-commands",
   "description": "Agartha CLI commands",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Alberto Ortiz Flores <aortiz@nyu.edu>",
   "contributors": [
     "Alberto Ortiz Flores <aortiz@nyu.edu>"
   ],
-  "keywords": [ "agartha" ],
+  "keywords": [
+    "agartha"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/dismorfo/agartha-cli-commands"
