@@ -7,9 +7,6 @@ const Commands = class {
       const agartha = process.agartha
       const defaultCommands = agartha.path.join(__dirname, 'lib/commands')
       const localCommands = agartha.path.join(agartha.appDir(), 'app', 'commands')
-      this.defaultOptions.forEach((option) => {
-        program.option(option.flag, option.description)
-      })
       agartha._.each([defaultCommands, localCommands], (path) => {
         if (agartha.exists(path)) {
           agartha._.each(agartha.readdirSync(path), (directory) => {
@@ -32,14 +29,6 @@ const Commands = class {
     } catch (e) {
       console.error('outer', e.message)
     }
-  }
-  get defaultOptions () {
-    return [
-      {
-        'flag': '-i, --interactive',
-        'description': 'Run interactive mode'
-      }
-    ]
   }
 }
 
