@@ -1,7 +1,7 @@
 'use strict'
 const Commands = class {
   constructor (program) {
-    this.version = '1.0.8'
+    this.version = '1.0.9'
     this.name = 'agartha-cli-commands'
     try {
       const agartha = process.agartha
