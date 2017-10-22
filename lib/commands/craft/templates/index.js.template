@@ -1,0 +1,37 @@
+'use strict'
+
+const <%= classname %> = class {
+  get command () {
+    // git like-command can be achive using [option] 
+    // e.g., command [option]
+    return '<%= command %>' 
+  }
+  get alias () {
+    return ''
+  }
+  get description () {
+    return 'my description'
+  }
+  get options () {
+    return [
+    ]
+  }
+  get onInit () {
+    return false
+  }
+  get enabled () {
+    return true
+  }
+  action () {
+    const agartha = process.agartha
+    try {
+      agartha.log('template <% command %>', 'command')
+      // access to parent via this.parent
+      console.log(this.parent)
+    } catch (e) {
+      agartha.exit(e)
+    }
+  }
+}
+
+module.exports = exports = <%= classname %>
